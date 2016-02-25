@@ -1,0 +1,71 @@
+#!/bin/bash
+usage="$(basename "$0") [-h] [-s n] -- program to calculate the answer to life, the universe and everything
+
+where:
+    -h  show this help text
+    -s  set the seed value (default: 42)"
+
+seed=42
+while getopts ':hsd:' option; do
+  case "$option" in
+    h) echo "$usage"
+       exit
+       ;;
+    s) seed=$OPTARG
+       ;;
+    :) printf "missing argument for -%s\n" "$OPTARG" >&2
+       echo "$usage" >&2
+       exit 1
+       ;;
+   \?) printf "illegal option: -%s\n" "$OPTARG" >&2
+       echo "$usage" >&2
+       exit 1
+       ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+# set up variables
+DIRECTORY="../backup"
+NAMEOFBACKUP=$1
+
+# make backup dir if doesnt exist
+# make backup dir if doesnt exist
+# make backup dir if doesnt exist
+# ../backup
+
+if [ ! -d "$DIRECTORY" ]; then
+  mkdir $DIRECTORY
+#else
+#  echo "log: backup already exists"t
+fi
+
+# make directory in backup dir
+# make directory in backup dir
+# make directory in backup dir
+# ../backup/project
+
+PROJECTNAME="$(basename $PWD)"
+PROJECTDIRECTORY="$DIRECTORY/$PROJECTNAME"
+
+if [ ! -d "$PROJECTDIRECTORY" ]; then
+  mkdir $PROJECTDIRECTORY
+fi
+
+# make name of direcotry in project dir
+# make name of direcotry in project dir
+# make name of direcotry in project dir
+# ../backup/project/myBackup123
+
+NEWDIRECTORY="$PROJECTDIRECTORY/$NAMEOFBACKUP"
+# make sure backup name doesn't exist
+if [  -d "$NEWDIRECTORY" ]; then
+  echo "backup with this name already exists"
+  exit 1
+else
+  mkdir $NEWDIRECTORY
+fi
+
+cp -r ./ $NEWDIRECTORY
+echo success!
+echo "new backup for $PROJECTDIR created at $NEWDIRECTORY"
