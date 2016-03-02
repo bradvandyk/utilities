@@ -1,14 +1,18 @@
 #!/bin/bash
-usage="$(basename "$0") [-h] [-s n] -- program to calculate the answer to life, the universe and everything
+usage="$(basename "$0") [show|list] [--help] name_of_backup -- program to help backup directories before making major changes
 
 where:
-    -h  show this help text
-    -s  set the seed value (default: 42)"
+    show|list         show this help text
+    name_of_backup    name of project to backup in ../backup/THIS_DIR_NAME/name_of_backup
+    --help           shows this help text"
 
 seed=42
-while getopts ':hsd:' option; do
+while getopts ':help:' option; do
   case "$option" in
-    h) echo "$usage"
+    help) echo "$usage"
+       exit
+       ;;
+    show) echo "$usage"
        exit
        ;;
     s) seed=$OPTARG
@@ -24,6 +28,17 @@ while getopts ':hsd:' option; do
   esac
 done
 shift $((OPTIND - 1))
+
+if [ $1 == "show" ] || [ $1 == "list" ]; then
+  DIRECTORY="../backup"
+  NAMEOFBACKUP=$1
+  PROJECTNAME="$(basename $PWD)"
+  PROJECTDIRECTORY="$DIRECTORY/$PROJECTNAME"
+
+  echo "List of backups:"
+  ls -lt $PROJECTDIRECTORY | grep -v '^total' | awk '{printf("   %-30s%s %-3s %s\n", $10, $7, $8, $9); }'
+  exit 1
+fi
 
 # set up variables
 DIRECTORY="../backup"
