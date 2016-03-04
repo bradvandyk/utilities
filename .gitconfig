@@ -1,0 +1,21 @@
+# This is Git's per-user configuration file.
+[core]
+	editor = pico
+[user]
+# Please adapt and uncomment the following lines:
+	name = Bradley Van Dyk
+	email = bradley.vandyk@angieslist.com
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[alias]
+	co = checkout
+	stat = status
+	bra = branch
+	br = branch -lvv
+	changed = diff-tree --no-commit-id --name-status -r
+	conf = diff --name-only --diff-filter=U
+	branch = branch --v
