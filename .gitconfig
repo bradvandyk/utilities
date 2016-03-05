@@ -19,3 +19,4 @@
 	changed = diff-tree --no-commit-id --name-status -r
 	conf = diff --name-only --diff-filter=U
 	branch = branch --v
+	rollback = !git reset --soft HEAD~ && git reset
