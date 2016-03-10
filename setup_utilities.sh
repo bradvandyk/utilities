@@ -4,7 +4,6 @@ cp ./gitconfig ~/.gitconfig
 
 # update specific variables
 email=$(cat gitconfig.emailaddress)
-echo $email
 sed -i -e "s/{gitconfig.emailaddress}/$email/g" ~/.gitconfig
 
 #source ~/.bash_profile
