@@ -36,7 +36,7 @@ if [ $1 == "show" ] || [ $1 == "list" ]; then
   PROJECTDIRECTORY="$DIRECTORY/$PROJECTNAME"
 
   echo "List of backups:"
-  ls -lt $PROJECTDIRECTORY | grep -v '^total' | awk '{printf("   %-30s%s %-3s %s\n", $10, $7, $8, $9); }'
+  ls -lt $PROJECTDIRECTORY | grep -v '^total' | awk '{printf("   %-40s%s %-8s %s\n", $10, $7, $8, $9); }'
   exit 1
 fi
 
