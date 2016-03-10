@@ -18,9 +18,17 @@ parse_git_branch() {
 }
 
 upd_util() {
-  git pull ~/code/bradvandyk/utilities
+  # store the current dir
+  CUR_DIR=$(pwd)
+  
+  # update
+  cd ~/code/bradvandyk/utilities
+  git pull
   ./setup_utilities.sh
   source ~/.bash_profile
+  
+  # go back to original dir
+  cd $CUR_DIR
 }
 
 function do_git {
