@@ -3,7 +3,7 @@ export LSCOLORS=exgxxxxxcxxxxxxxxxexex
 #export PS1="\e[1;34m\h \w> \e[m"
 #export PS1="\e[1;34m\h \w\033[32m\]\$(parse_git_branch)\[\033[00m\] > \e[m"
 #export PS1="\e[1;34m\h \w\033[32m\]\$(parse_git_branch)\[\033[00m\] > \e[m"
-export PS1="\e[1;34m\h\e[1;34m\$(parse_git_branch) \e[1;34m\w> \e[m"
+export PS1="\e[1;34m\h\e[1;34m\$(parse_git_branch) \e[1;34m\w test> \e[m"
 
 function tabname {
   printf "\e]1;$1\a"
