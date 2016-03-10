@@ -9,3 +9,9 @@ function tabname {
 function winname {
   printf "\e]2;$1\a"
 }
+
+function reload_util {
+  git pull
+  ~/code/bradvandyk/utilities/setup_script.py
+  source ~/.bash_profile
+}
