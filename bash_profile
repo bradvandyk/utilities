@@ -20,7 +20,7 @@ function winname {
 }
 
 function backup {
-  ~/code/bradvandyk/utilities/backup $@
+  ~/code/bradvandyk/utilities/scripts/backup $@
 }
 
 function isgit {
@@ -47,6 +47,10 @@ function upd_util() {
   
   # go back to original dir
   cd "$CUR_DIR"
+}
+
+function send() {
+  python ~/code/bradvandyk/utilities/scripts/sendmyemail.py $@
 }
 
 function do_git {
