@@ -36,7 +36,17 @@ if [ $1 == "show" ] || [ $1 == "list" ]; then
   PROJECTDIRECTORY="$DIRECTORY/$PROJECTNAME"
 
   echo "List of backups:"
-  ls -lt $PROJECTDIRECTORY | grep -v '^total' | awk '{printf("   %-40s%s %-8s %s\n", $10, $7, $8, $9); }'
+  #work ls -lt $PROJECTDIRECTORY | grep -v '^total' | awk '{printf("   %-40s%s %-8s %s\n", $10, $7, $8, $9); }'
+  #home ls -lt $PROJECTDIRECTORY | grep -v '^total' | awk '{printf("   %-40s%s %-8s %s\n", $9, $6, $7, $8); }'
+  ls -lt $PROJECTDIRECTORY | grep -v '^total' | rev | awk 'function rev(str) {
+    nstr = ""
+    for(i = 1; i <= length(str); i++) {
+      nstr = substr(str,i,1) nstr
+    }
+
+    return nstr
+  }
+  { printf("   %-40s%s %-8s %s\n", rev($1), rev($4), rev($3), rev($2)); }'
   exit 1
 fi
 
