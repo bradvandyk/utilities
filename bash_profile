@@ -70,7 +70,3 @@ function do_git {
 
 alias  gits='do_git'
 alias gi='git'
-
-# ruby on rails variables 11-19-15 (hedgeclippers)
-# eval "$(rbenv init -)"
-# export PATH="$HOME/.rbenv/shims:$PATH"
