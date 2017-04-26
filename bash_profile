@@ -11,7 +11,7 @@ export LSCOLORS=exgxxxxxcxxxxxxxxxexex
 #export PS1="\h\e[1;34m\$(parse_git_branch)\e[m \w> "                        # // default terminal colors..blue gitbranch
 export PS1="\e[1;34m\h \w\033[32m\]\$(parse_git_branch)\[\033[00m\] > \e[m" # // option 1 green gitbranch
 
-
+export PATH="$HOME/.fastlane/bin:$PATH"
 
 #alias ls='ls -G'
 # FUNCTIONS
