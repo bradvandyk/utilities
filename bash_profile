@@ -4,15 +4,25 @@
 export CLICOLOR=1
 export LSCOLORS=exgxxxxxcxxxxxxxxxexex
 #export PS1="\e[1;34m\h \w> \e[m"
-#export PS1="\e[1;34m\h \w\033[32m\]\$(parse_git_branch)\[\033[00m\] > \e[m"
-#export PS1="\e[1;34m\h \w\033[32m\]\$(parse_git_branch)\[\033[00m\] > \e[m"
-export PS1="\e[1;34m\h\e[1;34m\$(parse_git_branch) \e[1;34m\w> \e[m"
+#export PS1="\e[1;34m\h \w\033[32m\]\$(parse_git_branch)\[\033[00m\] > \e[m" # // option 1 green gitbranch
+#export PS1="\e[1;34m\h \w\033[32m\]\$(parse_git_branch)\[\033[00m\] > \e[m" # // option 2 idk
+#export PS1="\e[1;34m\h\e[1;34m\$(parse_git_branch) \e[1;34m\w> \e[m"        # // option default blue everything
 
+#export PS1="\h\e[1;34m\$(parse_git_branch)\e[m \w> "                        # // default terminal colors..blue gitbranch
+export PS1="\e[1;34m\h \w\033[32m\]\$(parse_git_branch)\[\033[00m\] > \e[m" # // option 1 green gitbranch
+
+
+
+#alias ls='ls -G'
 # FUNCTIONS
 # FUNCTIONS
 # FUNCTIONS
 function tabname {
   printf "\e]1;$1\a"
+}
+
+function rod {
+  telnet realmsofdespair.com 4000
 }
 
 function winname {
