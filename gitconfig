@@ -25,3 +25,4 @@
 	bvd = log --pretty=format:'%Cred%h%Creset - (%cr) - <%an> %<(50)> - %s ' --abbrev-commit -10
 	log2 = log --pretty=format:'%h %<(20)%an %s' -10
 	hglog = log --pretty=format:'commit:   %h%nauthor:   %an%ndate:     %ad%nsummary:  %s%n%n' -8
+	purge = clean -fd
