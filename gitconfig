@@ -26,3 +26,9 @@
 	log2 = log --pretty=format:'%h %<(20)%an %s' -10
 	hglog = log --pretty=format:'commit:   %h%nauthor:   %an%ndate:     %ad%nsummary:  %s%n%n' -8
 	purge = clean -fd
+	hardreset = !git reset --hard origin/master && git purge
+		
+	# squash from - http://ndlib.github.io/practices/one-commit-per-pull-request/
+	branch-current = rev-parse --symbolic-full-name --abbrev-ref HEAD
+	number-of-commits-since-master = "! sh -c 'git log master..`git branch-current` --oneline | wc -l | tr -d \" \"'"
+	squash = "! sh -c 'git rebase --interactive HEAD~`git number-of-commits-since-master`'"
