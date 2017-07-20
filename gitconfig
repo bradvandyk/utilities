@@ -27,8 +27,8 @@
 	hglog = log --pretty=format:'commit:   %h%nauthor:   %an%ndate:     %ad%nsummary:  %s%n%n' -8
 	purge = clean -fd
 	hardreset = !git reset --hard origin/master && git purge
-	cleanOldBranches = git branch --merged master | grep -v '^\*' | xargs -n 1 git branch -d
-		
+	cleanOldBranches = !git branch --merged master | grep -v '^\\*' | xargs -n 1 git branch -d #https://github.com/git-tips/tips#everyday-git-in-twenty-commands-or-so
+			
 	# squash from - http://ndlib.github.io/practices/one-commit-per-pull-request/
 	branch-current = rev-parse --symbolic-full-name --abbrev-ref HEAD
 	number-of-commits-since-master = "! sh -c 'git log master..`git branch-current` --oneline | wc -l | tr -d \" \"'"
