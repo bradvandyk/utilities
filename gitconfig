@@ -4,7 +4,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Bradley Van Dyk
-	email = {gitconfig.emailaddress}
+	email = {gcf.emailaddress}
 [push]
 	default = simple
 [filter "lfs"]
