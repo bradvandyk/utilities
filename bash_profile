@@ -1,3 +1,24 @@
+# NEW Aliases
+alias backup='~/code/bradvandyk/utilities/scripts/backup'
+alias bb='cd ~/.bradbin'
+alias bp='pico ~/.bash_profile'
+alias ga='git add'
+alias gc='. goosechase'
+alias gcf='pico ~/.gitconfig'
+alias gd='git diff'
+alias gi='git'
+alias gits='do_git'
+alias go='open *.xcworkspace*'
+alias gp='git push'
+alias gs='git stat'
+alias restoredata='cp *.xcworkspace/xcuserdata/bradley.vandyk.xcuserdatad/UserInterfaceState.xcuserstate.savedata *.xcworkspace/xcuserdata/bradley.vandyk.xcuserdatad/UserInterfaceState.xcuserstate'
+alias savedata='cp *.xcworkspace/xcuserdata/bradley.vandyk.xcuserdatad/UserInterfaceState.xcuserstate *.xcworkspace/xcuserdata/bradley.vandyk.xcuserdatad/UserInterfaceState.xcuserstate.savedata'
+alias send='python ~/code/bradvandyk/utilities/scripts/sendmyemail.py'
+alias sp='cd ~/code/sp_ios'
+alias src='source ~/.bash_profile'
+alias srp='src'
+
+
 # VARIABLES
 # VARIABLES
 # VARIABLES
