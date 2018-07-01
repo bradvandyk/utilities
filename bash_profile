@@ -1,4 +1,5 @@
 # NEW Aliases
+alias uti='cd ~/code/bradvandyk/utilities'
 alias backup='~/code/bradvandyk/utilities/scripts/backup'
 alias bb='cd ~/.bradbin'
 alias bp='pico ~/.bash_profile'
@@ -48,10 +49,6 @@ function rod {
 
 function winname {
   printf "\e]2;$1\a"
-}
-
-function backup {
-  ~/code/bradvandyk/utilities/scripts/backup $@
 }
 
 function isgit {
