@@ -1,5 +1,6 @@
 #!/bin/bash
 cp ~/.gitconfig ./gitconfig
+cp ~/.bash_profile ./bash_profile
 
 # update specific variables
 email=$(cat gcf.emailaddress)
