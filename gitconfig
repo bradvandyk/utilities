@@ -1,6 +1,9 @@
 # This is Git's per-user configuration file.
 [core]
 	editor = pico
+	# diff-so-fancy - https://github.com/so-fancy/diff-so-fancy
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = ~/.gitignore
 #	pager = less -+$LESS -R
 #	excludesfile = /Users/username/.gitignore
 [user]
@@ -55,3 +58,17 @@
 	
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	la = "!git config -l | grep alias | cut -c 7-"
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
