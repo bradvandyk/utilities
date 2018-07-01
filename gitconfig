@@ -1,6 +1,8 @@
 # This is Git's per-user configuration file.
 [core]
 	editor = pico
+#	pager = less -+$LESS -R
+#	excludesfile = /Users/username/.gitignore
 [user]
 # Please adapt and uncomment the following lines:
 	name = Bradley Van Dyk
@@ -33,3 +35,23 @@
 	branch-current = rev-parse --symbolic-full-name --abbrev-ref HEAD
 	number-of-commits-since-master = "! sh -c 'git log master..`git branch-current` --oneline | wc -l | tr -d \" \"'"
 	squash = "! sh -c 'git rebase --interactive HEAD~`git number-of-commits-since-master`'"
+	
+	# some of my own...some taken from https://gist.github.com/robmiller/6018582
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	cleanOldBranches = !git branch --merged master | grep -v '^\\*' | xargs -n 1 git branch -d #https://github.com/git-tips/tips#everyday-git-in-twenty-commands-or-so
+	logl = !git log origin/$1..HEAD #log changes since origin/master
+	unstage = reset HEAD
+	diffstage = diff --cached
+	delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	hardreset  = "!git reset --hard origin/$(git branch-name)"
+
+	# show hide
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
+	showhide = "!git ls-files -v|grep '^h'"
+	showall = "!git showhide | cut -c 3- | xargs git unhide"
+	showhidden = !git showhide
+	unhideall = !git showall
+	
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	la = "!git config -l | grep alias | cut -c 7-"
