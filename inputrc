@@ -1,0 +1,12 @@
+#set show-all-if-ambiguous on
+#set completion-ignore-case on
+##set show-all-if-ambiguous on
+#TAB: menu-complete
+
+# Completion Options
+set page-completions on
+set completion-ignore-case on
+#set completion-query-items 200
+#set show-all-if-ambiguous on
+#set show-all-if-unmodified on
+#set visible-stats on
